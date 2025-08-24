@@ -12,7 +12,33 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
 </head>
-<body>
+<body class="bg-[#F4F5F7] h-[100vh] flex flex-col justify-center items-center">
+
+    <div class="h-[130px] w-[300px] bg-[url(assets/bg.png)] bg-cover
+                flex justify-center items-center">
+
+        <img src="assets/Group.png" alt="Group Pic">
+    </div>
+
+    <form action="#" class="bg-[#FFFFFF] w-[350px] rounded-2xl p-10">
+        <div>
+            <label class="font-semibold" for="name">Mobile Number</label>
+            <br>
+            <input type="text" placeholder="Enter your number" class=
+            "input input-neutral bg-[#F4F5F7] mt-3 rounded-3xl" 
+            id="name"/>
+        </div>
+
+        <div class="mt-5">
+            <label class="font-semibold" for="pass">4 Digit Pin</label>
+            <br>
+            <input type="text" placeholder="Enter 4 Digit Pin" class=
+            "input input-neutral bg-[#F4F5F7] mt-3 rounded-3xl" 
+            id="pass"/>
+        </div>
+
+        <button class="btn bg-[#0874F2] text-white text-xl mt-5 w-full rounded-3xl">Login</button>
+    </form>
     
 </body>
 </html>
