@@ -44,17 +44,17 @@
         <!--App Buttons-->
         <div class="min-h-[200px] mt-2 grid grid-cols-3
              p-5 gap-4">
-            <div id="add-btn" class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+            <div id="add-btn" class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
                 <img class="mx-auto" src="assets/wallet1.png" alt="Wallet Pic">
                 <h2>Add Money</h2>
             </div>
 
-            <div id="cash-btn" class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+            <div id="cash-btn" class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
                 <img class="mx-auto" src="assets/send1.png" alt="Wallet Pic">
                 <h2>CashOut</h2>
             </div>
 
-            <div class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+            <div id="transfer-btn" class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
                 <img class="mx-auto" src="assets/money1.png" alt="Wallet Pic">
                 <h2>Transfer Money</h2>
             </div>
@@ -79,7 +79,7 @@
     <div class="all-form-sections max-w-lg mx-auto">
 
         <!--Add Money-->
-        <div id="add-money-parent">
+        <div class="form" id="add-money-parent">
             <h1 class="mt-6 mb-3 ml-2 font-semibold">Add Money</h1>
             <form action="#" class="bg-white rounded-2xl p-6 ml-5 mr-5">
                 <div>
@@ -99,7 +99,7 @@
                 <div>
                     <label for="add-amount" class="text-[#08080880] font-semibold">Amount to Add</label>
                     <br>
-                    <input id="add-amount" type="text" placeholder="Add Amount to withdraw" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                    <input id="add-amount" type="text" placeholder="Add Amount to your Balance" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
                 </div>
                 <div>
                     <label for="add-pin" class="text-[#08080880] font-semibold">Pin Number</label>
@@ -113,7 +113,7 @@
         </div>
 
         <!--Cash Out-->
-        <div id="cash-out-parent" style="display: none;">
+        <div class="form" id="cash-out-parent" style="display: none;">
             <h1 class="mt-6 mb-3 ml-2 font-semibold">Cash Out</h1>
             <form action="#" class="bg-white rounded-2xl p-6 ml-5 mr-5">
 
@@ -136,6 +136,11 @@
                 <button id="cash-out-btn" class="btn btn-primary bg-[#0874F2] text-xl text-white w-full rounded-3xl mt-5">Withdraw Money</button>
 
             </form>
+        </div>
+
+        <!--Transfer Money-->
+        <div class="form" id="transfer-money-parent" style="display: none;">
+            <h1 class="mt-6 mb-3 ml-2 font-semibold">Transfer Money</h1>
         </div>
 
     </div>

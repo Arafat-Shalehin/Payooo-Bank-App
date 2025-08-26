@@ -1,17 +1,93 @@
-// Add Money Functionalities.
-
 const validPin = 1234;
+
+// Functions to get input values.
+
+function getInputValueNumber (id) {
+
+    const inputFieldValueNumber = parseInt(document.getElementById(id).value);
+
+    return inputFieldValueNumber;
+
+}
+
+
+function getInputValue (id) {
+
+    const inputFieldValue = document.getElementById(id).value;
+
+    return inputFieldValue;
+
+}
+
+
+// function to get innerText
+
+function getInnerText (id) {
+
+    const elementValueNumber = parseInt(document.getElementById(id).innerText);
+
+    return elementValueNumber;
+
+}
+
+
+function setInnerText (value) {
+
+    const availableBalanceEle = document.getElementById("available-balance");
+
+    availableBalanceEle.innerText = value;
+
+}
+
+
+// Function to toggle
+
+function handleToggle (id) {
+
+    const forms = document.getElementsByClassName("form")
+
+    for (const form of forms) {
+        form.style.display = "none"
+    }
+
+    document.getElementById(id).style.display = "block";
+
+}
+
+// Functions to toggle buttons
+
+function handleButtonToggle (id) {
+    const formBtns = document.getElementsByClassName("form-btn");
+
+    for (const btns of formBtns) {
+
+        btns.classList.remove("border-[#0874f2]", "bg-[#A0BCFA]");
+
+        btns.classList.add("border-gray-300");
+
+    }
+
+    document.getElementById(id).classList.remove("border-gray-300");
+
+    document.getElementById(id).classList.add("border-[#0874f2]", "bg-[#A0BCFA]");
+}
+
+
+// Add Money Functionalities.
 
 document.getElementById("add-money-btn").addEventListener("click", function (event) {
     event.preventDefault();
     
-    const bank = document.getElementById("bank").value;
-    const accountNumber = document.getElementById("acc-num").value;
-    const amountAdded = parseInt(document.getElementById("add-amount").value);
-    const pinNumber = parseInt(document.getElementById("add-pin").value);
+    const bank = getInputValue("bank");
+
+    const accountNumber = getInputValue("acc-num");
+
+    const amountAdded = getInputValueNumber("add-amount");
+
+    const pinNumber = getInputValueNumber("add-pin");
 
     // Available Balance Functions.
-    const availableBalance = parseInt(document.getElementById("available-balance").innerText);
+    const availableBalance = getInnerText("available-balance");
     
     if (accountNumber.length < 11) {
         alert("Please provide valid account number");
@@ -25,7 +101,7 @@ document.getElementById("add-money-btn").addEventListener("click", function (eve
 
     const totalNewAvailableBalance = amountAdded + availableBalance;
 
-    document.getElementById("available-balance").innerText = totalNewAvailableBalance;
+    setInnerText(totalNewAvailableBalance);
 })
 
 
@@ -34,11 +110,13 @@ document.getElementById("add-money-btn").addEventListener("click", function (eve
 document.getElementById("cash-out-btn").addEventListener("click", function (event) {
     event.preventDefault();
 
-    const agentNumber = document.getElementById("agent-num").value;
-    const amountToWithdraw = parseInt(document.getElementById("amount-with").value);
-    const pinToWithdraw = parseInt(document.getElementById("pin-num-with").value);
+    const agentNumber = getInputValue("agent-num");
 
-    const availableBalance = parseInt(document.getElementById("available-balance").innerText);
+    const amountToWithdraw = getInputValueNumber("amount-with");
+
+    const pinToWithdraw = getInputValueNumber("pin-num-with");
+
+    const availableBalance = getInnerText("available-balance");
 
     if (agentNumber.length < 11) {
         alert("Please provide a valid number");
@@ -46,7 +124,7 @@ document.getElementById("cash-out-btn").addEventListener("click", function (even
     }
 
     if (amountToWithdraw > availableBalance) {
-        alert("You don't have enough money to withdraw");
+        alert("You don't have enough balance to withdraw");
         return;
     }
 
@@ -57,21 +135,33 @@ document.getElementById("cash-out-btn").addEventListener("click", function (even
 
     const afterWithTotalNewAvailableBalance = availableBalance - amountToWithdraw;
 
-    document.getElementById("available-balance").innerText = afterWithTotalNewAvailableBalance;
-    
+    setInnerText(afterWithTotalNewAvailableBalance);
+
 })
 
 
 // Buttons Functionalities, toggling features
 
 document.getElementById("add-btn").addEventListener("click", function () {
-    document.getElementById("cash-out-parent").style.display = "none";
 
-    document.getElementById("add-money-parent").style.display = "block";
+    handleToggle("add-money-parent");
+
+    handleButtonToggle("add-btn");
+
 });
 
 document.getElementById("cash-btn").addEventListener("click", function () {
-    document.getElementById("add-money-parent").style.display = "none";
+   
+   handleToggle("cash-out-parent");
 
-    document.getElementById("cash-out-parent").style.display = "block";
+   handleButtonToggle("cash-btn");
+
+});
+
+document.getElementById("transfer-btn").addEventListener("click", function () {
+    
+    handleToggle("transfer-money-parent");
+
+    handleButtonToggle("transfer-btn");
+    
 });
