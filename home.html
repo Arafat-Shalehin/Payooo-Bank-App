@@ -59,17 +59,17 @@
                 <h2>Transfer Money</h2>
             </div>
 
-            <div class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+            <div id="get-btn" class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
                 <img class="mx-auto" src="assets/bonus1.png" alt="Wallet Pic">
                 <h2>Get Bonus</h2>
             </div>
 
-            <div class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+            <div id="pay-btn" class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
                 <img class="mx-auto" src="assets/wallet1.png" alt="Wallet Pic">
                 <h2>Pay Bills</h2>
             </div>
 
-            <div class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+            <div id="transac-btn" class="form-btn border-2 border-gray-300 text-center p-3 rounded-2xl">
                 <img class="mx-auto" src="assets/transaction1.png" alt="Wallet Pic">
                 <h2>Transactions</h2>
             </div>
@@ -141,6 +141,93 @@
         <!--Transfer Money-->
         <div class="form" id="transfer-money-parent" style="display: none;">
             <h1 class="mt-6 mb-3 ml-2 font-semibold">Transfer Money</h1>
+            <form action="#" class="bg-white rounded-2xl p-6 ml-5 mr-5">
+
+                <div>
+                    <label for="transfer-user-num" class="text-[#08080880] font-semibold">User Account Number</label>
+                    <br>
+                    <input id="transfer-user-num" type="text" placeholder="Enter 11 digit number" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                </div>
+                <div>
+                    <label for="transfer-amount" class="text-[#08080880] font-semibold">Amount</label>
+                    <br>
+                    <input id="transfer-amount" type="text" placeholder="Enter Amount to Transfer" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                </div>
+                <div>
+                    <label for="transfer-pin" class="text-[#08080880] font-semibold">Pin Number</label>
+                    <br>
+                    <input id="transfer-pin" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                </div>
+
+                <button id="transfer-money-btn" class="btn btn-primary bg-[#0874F2] text-xl text-white w-full rounded-3xl mt-5">Send Now</button>
+
+            </form>
+        </div>
+
+        <!--Get Bonus-->
+        <div class="form" id="get-bonus-parent" style="display: none;">
+            <h1 class="mt-6 mb-3 ml-2 font-semibold">Get Bonus</h1>
+            <form action="#" class="bg-white rounded-2xl p-6 ml-5 mr-5">
+
+                <div>
+                    <label for="bonus" class="text-[#08080880] font-semibold">Enter your coupon</label>
+                    <br>
+                    <input id="bonus" type="text" placeholder="Enter your coupon" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                </div>
+
+                <button id="get-bonus-btn" class="btn btn-primary bg-[#0874F2] text-xl text-white w-full rounded-3xl mt-5">
+                    Get Bonus
+                </button>
+
+            </form>
+        </div>
+
+        <!--Pay Bills-->
+        <div class="form" id="pay-bills-parent" style="display: none;">
+            <h1 class="mt-6 mb-3 ml-2 font-semibold">Pay Bill</h1>
+            <form action="#" class="bg-white rounded-2xl p-6 ml-5 mr-5">
+                <div>
+                    <h1 class="text-[#08080880] font-semibold">Select to Pay</h1>
+                    <select id="bank" class="select bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full">
+                        <option disabled selected>Select Back</option>
+                        <option>Google Pay</option>
+                        <option>Bkash</option>
+                        <option>Nogod</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="pay-biller-num" class="text-[#08080880] font-semibold">Biller Account Number</label>
+                    <br>
+                    <input id="pay-biller-num" type="text" placeholder="Enter account number" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                </div>
+                <div>
+                    <label for="pay-amount" class="text-[#08080880] font-semibold">Amount to Pay</label>
+                    <br>
+                    <input id="pay-amount" type="text" placeholder="Add Amount to Pay" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                </div>
+                <div>
+                    <label for="pay-pin" class="text-[#08080880] font-semibold">Pin Number</label>
+                    <br>
+                    <input id="pay-pin" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                </div>
+
+                <button id="pay-bill-btn" class="btn btn-primary bg-[#0874F2] text-xl text-white w-full rounded-3xl mt-5">
+                    Pay Now
+                </button>
+
+            </form>
+        </div>
+
+        <!--Transactions-->
+
+        <div class="form" id="transaction-parent" style="display: none;">
+            <div class="flex justify-between items-center">
+                <h1 class="mt-6 mb-3 ml-2 font-semibold">Transaction History</h1>
+                <p class="text-[#08080880] ml-2 mt-3">View All</p>
+            </div>
+
+            <div id="transaction-container">
+            </div>
         </div>
 
     </div>
