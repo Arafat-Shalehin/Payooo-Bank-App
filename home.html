@@ -49,7 +49,7 @@
                 <h2>Add Money</h2>
             </div>
 
-            <div id="cash-out-btn" class="border-2 border-gray-300 text-center p-3 rounded-2xl">
+            <div id="cash-btn" class="border-2 border-gray-300 text-center p-3 rounded-2xl">
                 <img class="mx-auto" src="assets/send1.png" alt="Wallet Pic">
                 <h2>CashOut</h2>
             </div>
@@ -81,7 +81,7 @@
         <!--Add Money-->
         <div id="add-money-parent">
             <h1 class="mt-6 mb-3 ml-2 font-semibold">Add Money</h1>
-            <form action="#" class="bg-white rounded-2xl p-6">
+            <form action="#" class="bg-white rounded-2xl p-6 ml-5 mr-5">
                 <div>
                     <h1 class="text-[#08080880] font-semibold">Select A Bank</h1>
                     <select id="bank" class="select bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full">
@@ -115,6 +115,27 @@
         <!--Cash Out-->
         <div id="cash-out-parent" style="display: none;">
             <h1 class="mt-6 mb-3 ml-2 font-semibold">Cash Out</h1>
+            <form action="#" class="bg-white rounded-2xl p-6 ml-5 mr-5">
+
+                <div>
+                    <label for="agent-num" class="text-[#08080880] font-semibold">Agent Number</label>
+                    <br>
+                    <input id="agent-num" type="text" placeholder="Enter 11 digit number" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                </div>
+                <div>
+                    <label for="amount-with" class="text-[#08080880] font-semibold">Amount</label>
+                    <br>
+                    <input id="amount-with" type="text" placeholder="Enter Amount to withdraw" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                </div>
+                <div>
+                    <label for="pin-num-with" class="text-[#08080880] font-semibold">Pin Number</label>
+                    <br>
+                    <input id="pin-num-with" type="text" placeholder="Enter 4 digit pin number" class="input bg-[#f4f5f7] rounded-3xl mt-2 mb-2 w-full" />
+                </div>
+
+                <button id="cash-out-btn" class="btn btn-primary bg-[#0874F2] text-xl text-white w-full rounded-3xl mt-5">Withdraw Money</button>
+
+            </form>
         </div>
 
     </div>
